@@ -29,9 +29,8 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = ImageCaptioner(256, 256, len(vocab), 1).to(device)
 optimiser = optim.Adam(model.parameters(), lr=3e-4)
 
-weights_path = os.path.join(os.path.dirname(
-    __file__), "model", "best_weights.pth.tar")
-step = load_checkpoint(torch.load(weights_path), model, optimiser)
+weights_path = os.path.join(os.path.dirname(__file__), "model", "best_weights.pth.tar")
+step = load_checkpoint(torch.load(weights_path, weights_only=False), model, optimiser)
 model.eval()
 
 transform = transforms.Compose([
