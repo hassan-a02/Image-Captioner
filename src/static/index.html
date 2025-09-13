@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Caption Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Caption Generator</h1>
+        <input type="file" id="imageUpload" accept="image/*">
+        <button id="uploadButton">Upload Image</button>
+        <div id="imageContainer" class="image-container">
+            <img id="uploadedImage" src="" alt="Uploaded Image" style="display:none;">
+            <p id="caption" style="display:none;"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
