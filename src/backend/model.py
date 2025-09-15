@@ -113,7 +113,7 @@ class ImageCaptioner(nn.Module):
                 hiddens, states = self.decoder.lstm_layer(x, states)
                 output = self.decoder.linear_layer(hiddens.squeeze(0))
 
-                output = self.temperature_sample(output, 1)
+                output = self.temperature_sample(output, 0.25)
 
                 predicted = output.squeeze(0)
 
